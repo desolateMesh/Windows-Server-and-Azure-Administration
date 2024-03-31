@@ -4,29 +4,3 @@
 
 New-VM -Name "Windows Server 2019 VM" -MemoryStartupBytes 4GB -Generation 2 -NewVHDPath "C:\WindowsS19VM\WindowsS19VM.vhdx" -NewVHDSizeBytes 100GB
 This command creates a new Hyper-V VM named "Windows Server 2019 VM" with 4GB of memory, Generation 2 (UEFI-based), and a 100GB virtual hard disk.
-
-**2. Configure Processor Count:**
-
-Set-VM -Name "Windows Server 2019 VM" -ProcessorCount 4
-This command sets the number of processors for the VM to 4.
-
-**3. Add DVD Drive and Attach ISO:**
-
-Add-VMDvdDrive -VMName "Windows Server 2019 VM" -Path "\17763.3650.221105-1748.rs5_release_svc_refresh_SERVER_EVAL_x64FRE_en-us.iso"
-This command adds a DVD drive to the VM and attaches the specified ISO file.
-
-**4. Set DVD Drive as First Boot Device:**
-
-$dvdDrive = Get-VMDvdDrive -VMName "Windows Server 2019 VM"
-Set-VMFirmware -VMName "Windows Server 2019 VM" -FirstBootDevice $dvdDrive
-These commands set the DVD drive as the first boot device for the VM.
-
-**5. Enable Key Protector and TPM:**
-
-Set-VMKeyProtector -VMName "Windows Server 2019 VM" -NewLocalKeyProtector
-Enable-VMTPM -VMName "Windows Server 2019 VM"
-
-These commands enable BitLocker key protector and TPM (Trusted Platform Module) for the VM.
-
-# Domain Controller Configuration:
-Refer to the documentation for the Hybrid Environment Implementation Guide for ElevatedCloudWorks.com for detailed instructions on configuring the Domain Controller and joining it to your personal domain.
