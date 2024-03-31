@@ -2,5 +2,5 @@
 
 **1. Create a New Virtual Machine:**
 
+```powershell
 New-VM -Name "Windows Server 2019 VM" -MemoryStartupBytes 4GB -Generation 2 -NewVHDPath "C:\WindowsS19VM\WindowsS19VM.vhdx" -NewVHDSizeBytes 100GB
-This command creates a new Hyper-V VM named "Windows Server 2019 VM" with 4GB of memory, Generation 2 (UEFI-based), and a 100GB virtual hard disk.
