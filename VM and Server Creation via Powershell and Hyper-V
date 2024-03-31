@@ -1,6 +1,3 @@
-# Setting up a Hyper-V VM through PowerShell
+## Domain Controller Configuration:
 
-**1. Create a New Virtual Machine:**
-
-```powershell
-New-VM -Name "Windows Server 2019 VM" -MemoryStartupBytes 4GB -Generation 2 -NewVHDPath "C:\WindowsS19VM\WindowsS19VM.vhdx" -NewVHDSizeBytes 100GB
+Refer to the documentation for the Hybrid Environment Implementation Guide for ElevatedCloudWorks.com for detailed instructions on configuring the Domain Controller and joining it to your personal domain.
